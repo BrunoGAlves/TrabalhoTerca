@@ -1,2 +1,2 @@
-# TrabalhoTer-a
+# TrabalhoTerca
 Trabalho de terça
