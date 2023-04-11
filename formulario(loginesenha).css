@@ -1,0 +1,61 @@
+body{
+    overflow:hidden;
+    }
+
+.gif{
+    position:relative;
+    height:50vw;
+    width:100vw;
+    background-image: url("taverna2.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center ;
+    }    
+    
+
+.loginesenha{
+    background-color: rgba(0,0,0,0.9);
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    padding: 80px;
+    border-radius: 15px;
+    color: white;
+}
+.campodetexto {
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+.botaoentrar{
+    background-color: red;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+}
+.botaoentrar:hover{
+    background-color: darkred;
+    cursor:pointer;
+    
+
+}
+
+.botaoSom{
+    background-image: url("musica.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:absolute;
+    border:none;
+    padding:15px;
+    background-color:rgb(82, 60, 0);
+    outline: none;
+    cursor: pointer;
+    border-radius:7px;
+        }
