@@ -1,0 +1,257 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.formButton{
+    position: absolute; 
+    top: 80%;
+    left: 10%;
+    transform: translate(-50%,-50%); /* Essa função representam onde o objet vai se mover rente a outro, onde o primeiro valor é X eo segundo é Y */
+}
+
+.formButton button{
+    padding: 20px, 20px;
+    font-size: 20px;
+    font-weight: 600; /* densidade da font semelhante a um negrito*/
+    color:#222 ;
+    background:#0D48FC;
+    border: none;
+    outline: none; /* não entendo bem, mas ao que aparenta é uma borda secundaria */
+    cursor: pointer; /* muta o cursor do mouse*/
+    border-radius: 5px;
+}
+
+.popup .fecharBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+.container{
+    min-height: 100vh;
+   /* display: flex;
+    align-items: center;
+    justify-content: center;*/
+    position: absolute;
+    z-index: 1;
+    background-color: transparent;
+}
+
+.popup{
+    position: absolute;
+    max-width: 900px;
+    width:100%;
+    border-radius: 6px;
+    opacity: 0;
+    padding: 30px;
+    margin: 0 15px;
+    z-index: 2;
+    left: 30%;
+    background-color: #fff;
+    box-shadow:  0 5px 10px rgba(0,0,0,0.1);
+    transition: top 0ms ease-in-out 200ms,
+        opacity 200ms ease-in-out 0ms,
+        transform 20ms ease-in-out 0ms;
+}
+
+
+
+.popup.ativado{
+    opacity: 1;
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 00ms;
+}
+
+.popup form{
+    position: relative;
+    margin-top: 12px;
+    min-height: 500px;
+    background-color: #fff;
+    overflow: hidden;
+    overflow-y:auto;
+}
+
+.popup form .form_primario{
+    position:absolute;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+
+.popup form .form_segundario{
+    position:absolute;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+
+.popup form .form_terceiario{
+    position:absolute;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+
+/* Criação de transição do formulario. */
+#form_primario{
+    opacity:1;
+    pointer-events: auto;
+    transform: translateX(0%);
+    
+}
+
+#form_segundario{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(0%);
+}
+
+#form_terceiario{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(0%);
+}
+
+
+
+.popup form .titulo{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #333;
+}
+
+
+.container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .fields .input-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.input-field label{
+    font-size:12px ;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+.input-field input{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+/* Declaração dos atributos base */
+
+.input-field .nivel-forca{
+    outline: none;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 10px;
+    height: 60px;
+    margin: 6px 0;
+    width: 90px;
+    font-size: 30px;
+    text-align: center;
+
+}
+
+.input-field .mod-combate{
+    
+}
+
+/* Lista Atributos */
+.lista-salva{
+    width: 400px;
+    list-style-type: none;
+    align-items: center;
+
+ }
+
+.input-field  input::-webkit-outer-spin-button,
+.input-field  input::-webkit-inner-spin-button,
+.input-field-salva input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.input-field input:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+
+.input-field input[type="date"]{
+    color: #707070
+}
+
+.input-field input[type="date"]:valid{
+    color: #333;
+}
+
+.container form button, .backBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius:5px;
+    margin: 25px 0;
+    background-color: #4070f4;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.popup form button, 
+.popup form button .backBtn{
+    font-size:14px ;
+    font-weight: 400;
+}
+
+form button:hover{
+    background-color: #265df2;
+}
+
+.backBtn:hover{
+    background-color: #265df2;
+}
+
+form button .backBtn{
+    margin: 0;
+}
+
+form .buttons{
+    display: flex;
+    align-items: center;
+}
+
+form .buttons button, .backBtn{
+    margin-right: 14px;
+}
+
