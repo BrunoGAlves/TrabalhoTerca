@@ -29,11 +29,11 @@ body {
     opacity: 100%;
 }
 
-.botaoPrincipal:hover {
+.botaoprincipal:hover {
     background-color: rgb(201, 164, 3);
 }
 
-.botaoPrincipal:active {
+.botaoprincipal:active {
     background-color: rgb(255, 255, 255);
 }
 
