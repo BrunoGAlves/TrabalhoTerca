@@ -1,2 +1,0 @@
-# TrabalhoTerca
-Trabalho de terça
