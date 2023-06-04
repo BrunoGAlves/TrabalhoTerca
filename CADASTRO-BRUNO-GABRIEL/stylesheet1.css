@@ -34,6 +34,7 @@ body {
 .fontebotao {
     font-size: large;
     font-weight: bold;
+    white-space: nowrap;
     color: rgb(0, 0, 0);
 }
 
