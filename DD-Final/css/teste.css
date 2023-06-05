@@ -3,6 +3,9 @@ body {
     margin: 0;
     background-color: #eee;
     box-sizing: border-box;
+    height: 100vh;
+    background-position-x: center;
+    background-size: cover;
 }
 
 /* Layout */

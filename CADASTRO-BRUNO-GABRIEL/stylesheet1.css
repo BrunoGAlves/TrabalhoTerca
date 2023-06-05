@@ -3,28 +3,41 @@ body {
     background-position-x: center;
     background-image: url("taverna2.gif");
     background-size: cover;
+    
 }
 
+.filtro{
+    background: rgba(96, 167, 214, 0.3);
+}
 
+.logoDD{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .botaoprincipal {
     border-style: solid;
     border-width: 3px;
     padding: 20px;
-    background-color: rgb(82, 60, 0);
+    background-color: rgba(190, 68, 68, 1);
     outline: none;
     cursor: pointer;
     transition: background-color .3s;
     border-radius: 7px;
+    border: none;
     opacity: 100%;
     position: absolute;
-    left: 50%;
+    left: 48%;
     top: 90%;
     transform: translate(-50%, -50%);
 }
 
 .botaoprincipal:hover {
-    background-color: rgb(201, 164, 3);
+    background-color: rgb(196, 23, 23);
 }
 
 .botaoprincipal:active {
@@ -33,9 +46,11 @@ body {
 
 .fontebotao {
     font-size: large;
-    font-weight: bold;
     white-space: nowrap;
-    color: rgb(0, 0, 0);
+    font-family: 'Work Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 8000;
+    color: #ffffff;
 }
 
 /* login_css */
@@ -43,7 +58,8 @@ body {
 .loginesenha {
     font-family: Arial;
     font-size: 30px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 33, 116, 0.5);
+    border: 2px solid #a64949;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -58,6 +74,7 @@ body {
 .Login {
     font-family: Arial;
     font-size: 30px;
+    padding-bottom: 10px;
 }
 
 .campodetexto {
@@ -68,7 +85,7 @@ body {
 }
 
 .botaoentrar {
-    background-color: #ff9900;
+    background-color: #a64949;
     border: none;
     padding: 15px;
     width: 100%;
@@ -78,7 +95,7 @@ body {
 }
 
 .botaoentrar:hover {
-    background-color: #ff6600;
+    background-color: #a73434;
     cursor: pointer;
 
 
@@ -92,11 +109,11 @@ body {
 .corcadastrase {
     text-decoration: none;
     size: 15px;
-    color: #ff9900;
+    color: #a64949;
 }
 
 .corcadastrase:hover {
-    color: #ff6600;
+    color: #a73434;
     cursor: pointer;
 
 }
@@ -104,9 +121,11 @@ body {
 /* cadastro_css */
 
 .cadastro {
+    height: 430px;
     font-family: Arial;
     font-size: 30px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 33, 116, 0.5);
+    border: 2px solid #a64949;
     position: absolute;
     top: 50%;
     left: 50%;
