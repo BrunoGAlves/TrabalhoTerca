@@ -91,7 +91,7 @@ per_sobrevivencia INT,
 
 armor VARCHAR(50),
 armas VARCHAR(50),
-ferramentos VARCHAR(50),
+ferramentas VARCHAR(50),
 linguagens VARCHAR(50),
 
 historia VARCHAR(250),
