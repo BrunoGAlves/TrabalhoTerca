@@ -4,33 +4,6 @@ USE DOIDOS_E_DADOS
 
 CREATE TABLE tb_usuarios (
 cd_usuario INT NOT NULL AUTO_INCREMENT,
-usuario_login VARCHAR(30),
-usuario_senha VARCHAR(40),
-PRIMARY KEY (cd_usuario))
-
-
-CREATE TABLE tb_ficha_personagem (
-cd_personagem INT AUTO_INCREMENT,
-cd_usuario INT NOT NULL,
-nome_jogador VARCHAR(80) NOT NULL,
-nome_personagem VARCHAR(80) NOT NULL,
-raca_personagem VARCHAR(25) NOT NULL,
-antecedente_personagem VARCHAR(25) NOT NULL,
-tendencia_personagem VARCHAR(25) NOT NULL,
-
-atr_forca INT NOT NULL,
-atr_destreza INT NOT NULL,
-atr_constituicao INT NOT NULL,
-atr_inteligencia INT NOT NULL,
-atr_sabedoria INT NOT NULL,
-atr_carisma INT NOT NULL,
-
-mod_forca INT NOT NULL,
-mod_destreza INT NOT NULL,
-mod_constituicao INT NOT NULL,
-mod_inteligencia INT NOT NULL,
-CREATE TABLE tb_usuarios (
-cd_usuario INT NOT NULL AUTO_INCREMENT,
 usuario_email VARCHAR(50),
 usuario_senha VARCHAR(40),
 usuario_nome VARCHAR(50),
