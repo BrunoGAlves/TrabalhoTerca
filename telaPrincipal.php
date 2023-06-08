@@ -1,3 +1,10 @@
+<?php
+session_start(); // a sessão precisa ser iniciada em toda a pagina, já que ela sempre retorna 
+if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codigo que valida o os campos de sessão e autiticação.
+    header("Location: login.php?erro=2");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,11 +17,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="teste.css">
-    <link rel="stylesheet" href="teste.js">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="DD-final/css/teste.css">
+    <link rel="stylesheet" href="DD-final/js/teste.js">
+    <link rel="stylesheet" href="DD-final/css/style.css">
 
-    <title>Document</title>
+    <title>tela joão</title>
 </head>
 
 <body>
@@ -44,11 +51,12 @@
     </div>
 
     <!--------------------------------------- Fim Side Bar ------------------------->
+    
     <div style="margin-left: 50px;" class="container">
         <main>
             <section class="container">
                 <div class="popup">
-                <div class="fecharBtn">&times;</div>
+                    <div class="fecharBtn">&times;</div>
                 <!-- Formulario -->
                     <form action="#">
                         <div class="form_primario" id="form_primario">
@@ -108,12 +116,12 @@
             
                                     <div class="input-field">
                                         <label for="Nome">Constituição  </label>
-                                        <input type="number" class="nivel-forca" placeholder="Digite seu nivel:" required>
+                                        <input type="number" class="nivel-forca" placeholder="LVL:" required>
                                     </div>
             
                                     <div class="input-field">
                                         <label for="Nome">Inteligência  </label>
-                                        <input type="number" class="nivel-forca" placeholder="Digite seu nivel:" required>
+                                        <input type="number" class="nivel-forca" placeholder="LVL:" required>
                                     </div>
             
                                     <div class="input-field">
@@ -193,7 +201,7 @@
         
                         </div>
         
-                            <div class="form_terceiario" id="form_terceiario">
+                        <div class="form_terceiario" id="form_terceiario">
                                 <div class="detalhe pessoal">
                                     <span class="titulo"> Informações da Ficha: </span>
                                     <div class="fields">     
@@ -212,23 +220,45 @@
                                             <input type="number" id="classe" class="mod-combate" placeholder="Deslocamento:" required>
                                         </div>
                                     </div>
-        
-                                    <div class="buttons">
-                                    <div class="backBtn">
-                                        <span class="btnText" id="back2">Retorno</span>
-                                    </div>
-                                    <button class=".nextBtn-1">
-                                        <span class="btnText" id="next3">Next</span>
-                                    </button>
-                                    </div>
-            
                                 </div>
-                            </div>
-                    </form> 
-                </div>
+                                    <div class="detalhe pessoal">
+                                        <span class="titulo"> Proficiencias e linguagens: </span>  
+                                        <div class="fields">   
+                                            <div class="input-field">
+                                                <label for="Nome">Pericias em armaduras: </label>
+                                                <input type="text" id="classe" class="mod-area" placeholder="Pericias em armaduras:">
+                                            </div>
+                                            <div class="input-field">
+                                                <label for="Nome">Pericias em armas: </label>
+                                                <input type="text" id="classe" class="mod-area" placeholder="Pericias em armas:">
+                                            </div>
+                                            <div class="input-field">
+                                                <label for="Nome">Pericias em Ferramentas: </label>
+                                                <input type="text" id="classe" class="mod-area" placeholder="Pericias em Ferramentas:">
+                                            </div>
+                                            <div class="input-field">
+                                                <label for="Nome">Linguagens: </label>
+                                                <input type="text" id="classe" class="mod-area" placeholder="Pericias em Linguagens:">
+                                            </div>
+                                        
+                                        </div>
+                                        <div class="buttons">
+                                            <div class="backBtn">
+                                                <span class="btnText" id="back2">Retorno</span>
+                                            </div>
+                                            <button class=".nextBtn-1">
+                                                <span class="btnText" id="next3">Next</span>
+                                            </button>
+                                        </div>
+                                    </div>             
+                        </div>
+                        
+                    </form>
+                </div> 
             </section>
         </main>
-
+    </div>
+<!--FIM DO FORMULARIO-->
         <div class="row">
             <!-- Main stats -->
             <div class="col-md-6 atributos">
@@ -768,7 +798,7 @@
     </div>
 
     
-    <script src="arquivo.js"></script>
+    <script src="DD-final/js/arquivo.js"></script>
 
 </body>
 
