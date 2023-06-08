@@ -74,3 +74,24 @@ extras VARCHAR(250),
 CONSTRAINT pk_personagem PRIMARY KEY (cd_personagem),
 CONSTRAINT fk_usuarios_personagem FOREIGN KEY (cd_usuario) REFERENCES tb_usuarios(cd_usuario) 
 )
+
+
+INSERT INTO `tb_usuarios`(`usuario_email`, `usuario_senha`, `usuario_nome`, `usuario_apelido`) VALUES
+('julio.ciscato@gmail.com', 'teste', 'Julio Ciscato', 'xulio'),
+('joao.nunes@gmail.com', 'teste', 'João Nunes', 'xoão')
+
+
+INSERT INTO `tb_ficha_personagem`(`cd_usuario`, `nome_jogador`, `nome_personagem`, `raca_personagem`, `antecedente_personagem`, `tendencia_personagem`, `atr_forca`, `atr_destreza`, `atr_constituicao`, `atr_inteligencia`, `atr_sabedoria`, `atr_carisma`, `tdr_forca`, `tdr_destreza`, `tdr_constituicao`, `tdr_inteligencia`, `tdr_sabedoria`, `tdr_carisma`, `percp_passiva`, `bonus_profici`, `deslocamento`, `iniciativa`, `classe_armadura`, `inspiracao`, `vida_maxima`, `vida_atual`, `vida_temporaria`, `per_acrobacia`, `per_arcanismo`, `per_atletismo`, `per_atuacao`, `per_blefar`, `per_furtividade`, `per_historia`, `per_intimidacao`, `per_investigacao`, `per_lidar_animais`, `per_medicina`, `per_natureza`, `per_persuasao`, `per_prestidigitacao`, `per_religiao`, `per_sobrevivencia`)
+VALUES
+(1, 'Julio', 'Passarinho', 'Elfo', 'Forasteiro', 'Neutro',
+10, 9, 8, 13, 14, 15,
+0, -1, -1, 1, 2, 2,
+15, 2, 9, -1, 9, 0,
+28, 17, 3,
+2, 3, 4, 5, 3, 4, 5, 6, 5, 4, 3, 2, 6, 5, 4, 3),
+(2, 'João', 'Elizabeth', 'Elfo', 'Criminal', 'Caótico',
+14, 9, 8, 13, 10, 11,
+3, -1, -1, 1, 0, 0,
+15, 2, 9, -1, 9, 0,
+28, 17, 3,
+2, 3, 4, 5, 3, 4, 5, 6, 5, 4, 3, 2, 6, 5, 4, 3)
