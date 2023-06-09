@@ -1,0 +1,68 @@
+/* HEADER */
+
+
+
+
+header{
+    padding: 2%;
+    background-color: rgba(2, 27, 88, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 72.5px;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+
+.centralizarHeader{
+    display: flex;
+    align-items: center;
+}
+
+.userIcon{
+    padding: 10px;
+    padding-right: 25px;
+    font-size: 30px;
+    color: white;
+}
+
+.nomePersonagem{
+    font-weight: 600;
+    color: rgb(190, 68, 68);
+}
+
+.CharInfo{
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    justify-content: space-between;
+    color: white;
+}
+
+.lvlChar{
+    text-align: start;
+    font-size: 13px;
+    margin-top: -20px;
+    color: white;
+}
+
+.logOutButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(190, 68, 68);
+    height: 72.5px;
+    width: 150px;
+    text-decoration: none;
+    color: rgb(206, 203, 203);
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+}
+
+.logOutButton:hover{
+    color: white;
+    background-color: rgb(189, 39, 39);
+}

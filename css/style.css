@@ -58,14 +58,14 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    max-width: 900px;
+    max-width: 70%;
     width: 100%;
-    border-radius: 6px;
+    border-radius: 9px;
     opacity: 0;
-    padding: 30px;
+    padding: 10px;
     margin: 0 15px;
-    z-index: 2;
-    background-color: #fff;
+    z-index: 0;
+    background-color: #a54848;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     transition: top 0ms ease-in-out 200ms,
         opacity 200ms ease-in-out 0ms,
@@ -76,6 +76,7 @@
 
 .popup.ativado {
     opacity: 1;
+    z-index: 2;
     transition: top 0ms ease-in-out 0ms,
         opacity 200ms ease-in-out 0ms,
         transform 20ms ease-in-out 00ms;
@@ -85,26 +86,27 @@
     position: relative;
     margin-top: 12px;
     min-height: 500px;
-    background-color: #fff;
+    background-color: #68dbd6;
     overflow: hidden;
     overflow-y: auto;
+    margin: 20px;
 }
 
 .popup form .form_primario {
     position: absolute;
-    background-color: #fff;
+    background-color: #9faa3c;
     transition: 0.3s ease;
 }
 
 .popup form .form_segundario {
     position: absolute;
-    background-color: #fff;
+    background-color: #18b93b;
     transition: 0.3s ease;
 }
 
 .popup form .form_terceiario {
     position: absolute;
-    background-color: #fff;
+    background-color: #c02ea0;
     transition: 0.3s ease;
 }
 
@@ -143,7 +145,7 @@
 .container form .fields {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
@@ -170,6 +172,7 @@ form .fields .input-field {
     padding: 15px;
     height: 42px;
     margin: 8px 0;
+    
 }
 
 /* Declaração dos atributos base */
@@ -196,7 +199,6 @@ form .fields .input-field {
     width: 400px;
     list-style-type: none;
     align-items: center;
-
 }
 
 .input-field input::-webkit-outer-spin-button,
