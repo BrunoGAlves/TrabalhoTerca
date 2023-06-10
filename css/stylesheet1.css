@@ -1,0 +1,138 @@
+body {
+    height: 100vh;
+    background-position-x: center;
+    background-image: url("taverna2.gif");
+    background-size: cover;
+    
+}
+
+.filtro{
+    background: rgba(96, 167, 214, 0.3);
+}
+
+.logoDD{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.botaoprincipal {
+    border-style: solid;
+    border-width: 3px;
+    padding: 20px;
+    background-color: rgba(190, 68, 68, 1);
+    outline: none;
+    cursor: pointer;
+    transition: background-color .3s;
+    border-radius: 7px;
+    border: none;
+    opacity: 100%;
+    position: absolute;
+    left: 48%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+}
+
+.botaoprincipal:hover {
+    background-color: rgb(196, 23, 23);
+}
+
+.botaoprincipal:active {
+    background-color: rgb(255, 255, 255);
+}
+
+.fontebotao {
+    font-size: large;
+    white-space: nowrap;
+    font-family: 'Work Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 8000;
+    color: #ffffff;
+}
+
+/* login_css */
+
+.loginesenha {
+    font-family: Arial;
+    font-size: 30px;
+    background-color: rgba(0, 33, 116, 0.5);
+    border: 2px solid #a64949;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px;
+    border-radius: 15px;
+    color: white;
+    opacity: 0%;
+    z-index: 0;
+}
+
+.Login {
+    font-family: Arial;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.campodetexto {
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.botaoentrar {
+    background-color: #a64949;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+}
+
+.botaoentrar:hover {
+    background-color: #a73434;
+    cursor: pointer;
+
+
+}
+
+.conexaocadastro {
+    font-family: Arial;
+    font-size: 15px;
+}
+
+.corcadastrase {
+    text-decoration: none;
+    size: 15px;
+    color: #a64949;
+}
+
+.corcadastrase:hover {
+    color: #a73434;
+    cursor: pointer;
+
+}
+
+/* cadastro_css */
+
+.cadastro {
+    height: 430px;
+    font-family: Arial;
+    font-size: 30px;
+    background-color: rgba(0, 33, 116, 0.5);
+    border: 2px solid #a64949;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px;
+    border-radius: 15px;
+    color: white;
+    opacity: 0%;
+    z-index: -1;
+}

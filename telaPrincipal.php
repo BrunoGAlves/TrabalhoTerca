@@ -1,3 +1,14 @@
+<?php
+
+session_start(); // a sessão precisa ser iniciada em toda a pagina, já que ela sempre retorna 
+if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codigo que valida o os campos de sessão e autiticação.
+    header("Location: index.php?erro=2");
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,7 +27,7 @@
     <link rel="stylesheet" href="js/teste.js">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>tela joão</title>
+    <title>tela principal</title>
 </head>
 
 <body>
@@ -50,7 +61,6 @@
                         <p class="nomePersonagem">Nome do personagem</p>
                     </div>
                     <div class="CharInfo">
-                        <p>Gênero</p>
                         <p>Raça</p>
                         <p>Classe</p>
                         <p style="margin-top: -22px; color: rgb(190, 68, 68);">Lvl</p>
@@ -61,8 +71,8 @@
 
                 </div>
             </div>
-            <a class="logOutButton">
-                <p>Log out</p>
+            <a class="logOutButton" href="classes/_logoff.php">
+                <p>Log out </p>
                 <i style="padding-left: 10px;" class="fa-solid fa-right-from-bracket"></i>
             </a>
 
@@ -73,7 +83,7 @@
                     <div class="popup">
                         <div class="fecharBtn">&times;</div>
                         <!-- Formulario -->
-                        <form action="#">
+                        <form action="classes/_fichaPersonaCreate.php" method="post">
                             <div class="form_primario" id="form_primario">
                                 <div class="detalhe pessoal">
                                     <span class="titulo"> Informações da Ficha: </span>
@@ -85,42 +95,47 @@
                                             <div class="col-md-6">
                                                 <div class="input-field">
                                                     <label for="Nome">Nome do Personagem:</label>
-                                                    <input type=" text" placeholder="Digite o nome:" required>
+                                                    <input type="text" name="nomePersonagem" placeholder="Digite o nome:" required>
                                                 </div>
 
                                                 <div class="input-field">
                                                     <label for="Nome">Nome do Jogador: </label>
-                                                    <input type=" text" placeholder="Digite o nome do jogador:"
+                                                    <input type="text" name="nomeJogador" placeholder="Digite o nome do jogador:"
                                                         required>
                                                 </div>
 
                                                 <div class="input-field">
                                                     <label for="Nome">Classe de personagem: </label>
-                                                    <input type="text" id="classe" placeholder="Classe do personagem:"
+                                                    <input type="text" name="classePersonagem" id="classe" placeholder="Classe do personagem:"
                                                         required>
                                                 </div>
 
                                                 <div class="input-field">
                                                     <label for="Nome">Nivel </label>
-                                                    <input type="number" id="nivel" placeholder="Digite seu nivel:"
+                                                    <input type="number" name="nivel"  id="nivel" placeholder="Digite seu nivel:"
                                                         required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="input-field">
                                                     <label for="Nome">Raça de personagem: </label>
-                                                    <input type=" text" placeholder="Raça do personagem:" required>
+                                                    <input type="text" name="racaPersonagem"  placeholder="Raça do personagem:" required>
                                                 </div>
 
                                                 <div class="input-field">
                                                     <label for="Nome">Antecedentes:</label>
-                                                    <input type="text" placeholder=" Antecedente do personagem:"
+                                                    <input type="text" name="antecedentePersonagem" placeholder=" Antecedente do personagem:"
                                                         required>
                                                 </div>
 
                                                 <div class="input-field">
                                                     <label for="Nome">Alinhamento </label>
-                                                    <input type=" text" placeholder="Alinhamento do personagem: "
+                                                    <input type="text" name="alinhamentoPersonagem" placeholder="Alinhamento do personagem:"
+                                                        required>
+                                                </div>
+                                                <div class="input-field">
+                                                    <label for="Nome">Bonus de Proficiencias: </label>
+                                                    <input type="number" name="bonusProciencia" placeholder="Alinhamento do personagem:"
                                                         required>
                                                 </div>
                                             </div>
@@ -135,38 +150,38 @@
                                             <div style="padding-right: 100px;" class="col-md-6">
                                                 <div class="input-field">
                                                     <label for="Nome">Força </label><br>
-                                                    <input type="number" class="nivel-forca" placeholder="LVL:"
+                                                    <input type="number" name="atributoForca"  class="nivel-forca" placeholder="LVL:"
                                                         required>
                                                 </div>
 
                                                 <div class="input-field">
                                                     <label for="Nome">Destreza </label><br>
-                                                    <input type="number" class="nivel-forca" placeholder="LVL:"
+                                                    <input type="number" name="atributoDestreza" class="nivel-forca" placeholder="LVL:"
                                                         required>
                                                 </div>
 
                                                 <div class="input-field">
                                                     <label for="Nome">Constituição </label>
-                                                    <input type="number" class="nivel-forca" placeholder="LVL:"
+                                                    <input type="number" name="atributoConstituicao" class="nivel-forca" placeholder="LVL:"
                                                         required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="input-field">
                                                     <label for="Nome">Inteligência </label><br>
-                                                    <input type="number" class="nivel-forca" placeholder="LVL:"
+                                                    <input type="number" name="atributoInteligencia" class="nivel-forca" placeholder="LVL:"
                                                         required>
                                                 </div>
 
                                                 <div class="input-field">
                                                     <label for="Nome">Sabedoria </label><br>
-                                                    <input type="number" class="nivel-forca" placeholder="LVL:"
+                                                    <input type="number" name="atributoSabedoria" class="nivel-forca" placeholder="LVL:"
                                                         required>
                                                 </div>
 
                                                 <div class="input-field">
                                                     <label for="Nome">Carisma </label><br>
-                                                    <input type="number" class="nivel-forca" placeholder="LVL:"
+                                                    <input type="number" name="atributoCarisma" class="nivel-forca" placeholder="LVL:"
                                                         required>
                                                 </div>
                                             </div>
@@ -184,17 +199,17 @@
                                     <div class="fields">
                                         <div class="input-field-salva">
                                             <ul class="lista-salva">
-                                                <li><input type="number" class="salvaguarda" placeholder="Força"
+                                                <li><input type="number" name="resistenciaForca" class="salvaguarda" placeholder="Força"
                                                         required> Força</li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Destreza"
+                                                <li><input type="number" name="resistenciaDestreza" class="salvaguarda" placeholder="Destreza"
                                                         required> Destreza</li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Constituição"
+                                                <li><input type="number" name="resistenciaConstituicao"  class="salvaguarda" placeholder="Constituição"
                                                         required> Constituição</li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Inteligência"
+                                                <li><input type="number" name="resistenciaInteligencia" class="salvaguarda" placeholder="Inteligência"
                                                         required> Inteligência</li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Sabedoria"
+                                                <li><input type="number" name="resistenciaSabedoria" class="salvaguarda" placeholder="Sabedoria"
                                                         required> Sabedoria</li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Carisma"
+                                                <li><input type="number" name="resistenciaCarisma" class="salvaguarda" placeholder="Carisma"
                                                         required> Carisma </li>
                                             </ul>
                                         </div>
@@ -206,43 +221,43 @@
                                     <div class="fields">
                                         <div class="input-field-salva">
                                             <ul class="lista-salva">
-                                                <li><input type="number" class="salvaguarda" placeholder="Força"
+                                                <li><input type="number" class="salvaguarda" name="periciaAcrobacia" placeholder="Acrobacia"
                                                         required> Acrobacia </li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Destreza"
+                                                <li><input type="number" class="salvaguarda" name="periciaArcanismo" placeholder="Arcanismo"
                                                         required> Arcanismo </li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Constituição"
+                                                <li><input type="number" class="salvaguarda" name="periciaAtletismo" placeholder="Atletismo"
                                                         required> Atletismo</li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Força"
+                                                <li><input type="number" class="salvaguarda" name="periciaAtuacao" placeholder="Atuação"
                                                         required> Atuação </li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Destreza"
+                                                <li><input type="number" class="salvaguarda" name="periciaBlefar" placeholder="Enganação"
                                                         required> Enganação </li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Constituição"
+                                                <li><input type="number" class="salvaguarda" name="periciaFurtividade" placeholder="Furtividade"
                                                         required> Furtividade</li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Força"
+                                                <li><input type="number" class="salvaguarda" name="periciaHistoria" placeholder="Historia"
                                                         required> Historia </li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Destreza"
+                                                <li><input type="number" class="salvaguarda" name="periciaIntimidacao" placeholder="intimidação"
                                                         required> Intimidação </li>
                                             </ul>
                                         </div>
                                         <div class="input-field-salva">
                                             <ul class="lista-salva">
-                                                <li><input type="number" class="salvaguarda" placeholder="Constituição"
+                                                <li><input type="number" class="salvaguarda" name="periciaIntuicao" placeholder="intuição"
                                                         required> intuição </li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Força"
+                                                <li><input type="number" class="salvaguarda" name="periciaInvestigacao" placeholder="investigação"
                                                         required> investigação </li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Destreza"
+                                                <li><input type="number" class="salvaguarda" name="periciaLidarAnimais" placeholder="Lidar com animais"
                                                         required> Lidar com animais </li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Constituição"
+                                                <li><input type="number" class="salvaguarda" name="periciaMedicina" placeholder="Medicina"
                                                         required> Medicina</li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Destreza"
+                                                <li><input type="number" class="salvaguarda" name="periciaNatureza" placeholder="Natureza"
                                                         required> Natureza </li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Constituição"
+                                                <li><input type="number" class="salvaguarda" name="periciaPersuasao" placeholder="Percepção"
                                                         required> Percepção </li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Força"
+                                                <li><input type="number" class="salvaguarda" name="periciaPrestidigitacao" placeholder="Prestigitação"
                                                         required> Prestigitação </li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Destreza"
+                                                <li><input type="number" class="salvaguarda" name="periciaReligiao" placeholder="Religião"
                                                         required> Religião </li>
-                                                <li><input type="number" class="salvaguarda" placeholder="Constituição"
+                                                <li><input type="number" class="salvaguarda" name="periciaSobrevivencia" placeholder="Sobrevivencia"
                                                         required> Sobrevivencia </li>
                                             </ul>
                                         </div>
@@ -266,20 +281,31 @@
                                     <div class="fields">
                                         <div class="input-field">
                                             <label for="Nome">Classe de armadura:</label>
-                                            <input type="number" class="mod-combate"
-                                                placeholder="Digite o valor da classe:" required>
+                                            <input type="number" name="classeArmadura" class="mod-combate"
+                                                placeholder="Digite o valor da classe de armadura:" required>
                                         </div>
 
                                         <div class="input-field">
                                             <label for="Nome">Iniciativa: </label>
-                                            <input type="number" class="mod-combate"
+                                            <input type="number" name="iniciativa" class="mod-combate"
                                                 placeholder="Digite o valor de iniciativa:" required>
                                         </div>
 
                                         <div class="input-field">
+                                            <label for="Nome">Percepção Passiva: </label>
+                                            <input type="number" name="percepcaoPassiva" class="mod-combate"
+                                                placeholder="Digite o valor de percepção passiva:" required>
+                                        </div>
+
+                                        <div class="input-field">
                                             <label for="Nome">Deslocamento: </label>
-                                            <input type="number" id="classe" class="mod-combate"
+                                            <input type="number" name="deslocamento" id="classe" class="mod-combate"
                                                 placeholder="Deslocamento:" required>
+                                        </div>
+                                        <div class="input-field">
+                                            <label for="Nome">Vida Maxima: </label>
+                                            <input type="text" name="vidaMaxima" id="classe" class="mod-combate"
+                                                placeholder="Vida Maxima:" required>
                                         </div>
                                     </div>
                                 </div>
@@ -288,22 +314,22 @@
                                     <div class="fields">
                                         <div class="input-field">
                                             <label for="Nome">Pericias em armaduras: </label>
-                                            <input type="text" id="classe" class="mod-area"
+                                            <input type="text" id="classe" name="armor" class="mod-area"
                                                 placeholder="Pericias em armaduras:">
                                         </div>
                                         <div class="input-field">
                                             <label for="Nome">Pericias em armas: </label>
-                                            <input type="text" id="classe" class="mod-area"
+                                            <input type="text" id="classe" name="armas" class="mod-area"
                                                 placeholder="Pericias em armas:">
                                         </div>
                                         <div class="input-field">
                                             <label for="Nome">Pericias em Ferramentas: </label>
-                                            <input type="text" id="classe" class="mod-area"
+                                            <input type="text" id="classe" name="ferramentas" class="mod-area"
                                                 placeholder="Pericias em Ferramentas:">
                                         </div>
                                         <div class="input-field">
                                             <label for="Nome">Linguagens: </label>
-                                            <input type="text" id="classe" class="mod-area"
+                                            <input type="text" id="classe" name="linguagens" class="mod-area"
                                                 placeholder="Pericias em Linguagens:">
                                         </div>
 
@@ -312,8 +338,8 @@
                                         <div class="backBtn">
                                             <span class="btnText" id="back2">Retorno</span>
                                         </div>
-                                        <button class=".nextBtn-1">
-                                            <span class="btnText" id="next3">Próximo</span>
+                                        <button class=".nextBtn-1" >
+                                            <span class="btnText" id="next3" >Confirmar</span>
                                         </button>
                                     </div>
                                 </div>

@@ -16,7 +16,7 @@ include 'conexao.php';
     $row = mysqli_fetch_array($resultado);
 
     session_start();
-    $_SESSION["jogador"] = $row['usuario_email'];
+    $_SESSION["jogador"] = $row['cd_usuario'];
     $_SESSION["autenticacao"] = true;
         header('location:../telaPrincipal.php');
 

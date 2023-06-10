@@ -3,15 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="CADASTRO-BRUNO-GABRIEL/resetcss.css" />
-    <link rel="stylesheet" href="CADASTRO-BRUNO-GABRIEL/stylesheet1.css" />
+    <link rel="stylesheet" href="css/resetcss.css" />
+    <link rel="stylesheet" href="css/stylesheet1.css" />
     <title>Document</title>
 </head>
 
 <body>
     <main>
         <div style="height: 100vh;" class="filtro">
-            <img class="logoDD" src="CADASTRO-BRUNO-GABRIEL/pngfind.com-dungeons-and-dragons-png-2663967.png" alt="Dungeons And Dragons 5th Edition Logo@pngkey.com">
+            <img class="logoDD" src="css/pngfind.com-dungeons-and-dragons-png-2663967.png" alt="Dungeons And Dragons 5th Edition Logo@pngkey.com">
             <a class="botaoprincipal" id="botaoprincipal">
                 <p class="fontebotao">COMEÇAR A AVENTURA </p>
             </a>

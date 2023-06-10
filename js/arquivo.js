@@ -1,5 +1,4 @@
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
 document.querySelector("#formularioShow").addEventListener("click",function(){
     document.querySelector(".popup").classList.add("ativado");
@@ -26,7 +25,6 @@ Next1.onclick = function(){
     Form1.style.pointerEvents = "none";
     Form2.style.opacity = "1";
     Form2.style.pointerEvents = "auto";
-    Form2.style.zIndex = "2";
 }
 
 Back1.onclick = function(){
@@ -34,6 +32,7 @@ Back1.onclick = function(){
     Form1.style.pointerEvents = "auto";
     Form2.style.opacity = "0";
     Form2.style.pointerEvents = "none";
+    
 }
 
 Next2.onclick = function(){
@@ -53,4 +52,5 @@ Back2.onclick = function(){
 
 
 backBtn.addEventListener("click", () => form.classList.remove('secActive'));
+
 
