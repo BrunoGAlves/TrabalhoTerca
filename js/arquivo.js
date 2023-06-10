@@ -3,6 +3,7 @@
 
 document.querySelector("#formularioShow").addEventListener("click",function(){
     document.querySelector(".popup").classList.add("ativado");
+    
 });
 
 document.querySelector(".popup .fecharBtn").addEventListener("click",function(){
@@ -25,6 +26,7 @@ Next1.onclick = function(){
     Form1.style.pointerEvents = "none";
     Form2.style.opacity = "1";
     Form2.style.pointerEvents = "auto";
+    Form2.style.zIndex = "2";
 }
 
 Back1.onclick = function(){

@@ -1,12 +1,4 @@
-<?php
-session_start(); // a sessão precisa ser iniciada em toda a pagina, já que ela sempre retorna 
-if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codigo que valida o os campos de sessão e autiticação.
-    header("Location: login.php?erro=2");
-}
-?>
-
-
-3<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -18,7 +10,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="css/buttonNewChar.css">
+    <link rel="stylesheet" href="css/buttonNewChar.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/teste.css">
     <link rel="stylesheet" href="js/teste.js">
@@ -41,7 +33,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                     <li style="position: absolute; bottom: 0px;">
                         <button class="buttonNewChar" id="formularioShow">Novo Personagem</button>
                     </li>
-                </ul>   
+                </ul>
             </div>
         </nav>
     </div>
@@ -64,16 +56,16 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                         <p style="margin-top: -22px; color: rgb(190, 68, 68);">Lvl</p>
                     </div>
                     <div class="lvlChar">
-                        <p>Level Lvl</p>
+                        <p>Nível Lvl</p>
                     </div>
-                    
+
                 </div>
             </div>
             <a class="logOutButton">
                 <p>Log out</p>
                 <i style="padding-left: 10px;" class="fa-solid fa-right-from-bracket"></i>
             </a>
-            
+
         </header>
         <div class="container">
             <main>
@@ -86,88 +78,103 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                 <div class="detalhe pessoal">
                                     <span class="titulo"> Informações da Ficha: </span>
                                     <div class="row">
-                                        
+
                                     </div>
                                     <div class="fields">
-                                        <div class="input-field">
-                                            <label for="Nome">Nome do Personagem:</label>
-                                            <input type=" text" placeholder="Digite o nome:" required>
-                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="input-field">
+                                                    <label for="Nome">Nome do Personagem:</label>
+                                                    <input type=" text" placeholder="Digite o nome:" required>
+                                                </div>
 
-                                        <div class="input-field">
-                                            <label for="Nome">Nome do Jogador: </label>
-                                            <input type=" text" placeholder="Digite o nome do jogador:" required>
-                                        </div>
+                                                <div class="input-field">
+                                                    <label for="Nome">Nome do Jogador: </label>
+                                                    <input type=" text" placeholder="Digite o nome do jogador:"
+                                                        required>
+                                                </div>
 
-                                        <div class="input-field">
-                                            <label for="Nome">Classe de personagem: </label>
-                                            <input type="text" id="classe" placeholder="Classe do personagem:" required>
-                                        </div>
+                                                <div class="input-field">
+                                                    <label for="Nome">Classe de personagem: </label>
+                                                    <input type="text" id="classe" placeholder="Classe do personagem:"
+                                                        required>
+                                                </div>
 
-                                        <div class="input-field">
-                                            <label for="Nome">Nivel </label>
-                                            <input type="number" id="nivel" placeholder="Digite seu nivel:" required>
-                                        </div>
+                                                <div class="input-field">
+                                                    <label for="Nome">Nivel </label>
+                                                    <input type="number" id="nivel" placeholder="Digite seu nivel:"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-field">
+                                                    <label for="Nome">Raça de personagem: </label>
+                                                    <input type=" text" placeholder="Raça do personagem:" required>
+                                                </div>
 
-                                        <div class="input-field">
-                                            <label for="Nome">Raça de personagem: </label>
-                                            <input type=" text" placeholder="Raça do personagem:" required>
-                                        </div>
+                                                <div class="input-field">
+                                                    <label for="Nome">Antecedentes:</label>
+                                                    <input type="text" placeholder=" Antecedente do personagem:"
+                                                        required>
+                                                </div>
 
-                                        <div class="input-field">
-                                            <label for="Nome">Antecedentes:</label>
-                                            <input type="text" placeholder=" Antecedente do personagem:" required>
-                                        </div>
-
-                                        <div class="input-field">
-                                            <label for="Nome">Alinhamento </label>
-                                            <input type=" text" placeholder="Alinhamento do personagem: " required>
+                                                <div class="input-field">
+                                                    <label for="Nome">Alinhamento </label>
+                                                    <input type=" text" placeholder="Alinhamento do personagem: "
+                                                        required>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Atributos Input -->
                                 <div class="detalhe ID">
                                     <span class="titulo">Atributos do Personagem</span>
+                                    <div class="fieldsInput">
+                                        <div style="padding-left: 50px;" class="row">
+                                            <div style="padding-right: 100px;" class="col-md-6">
+                                                <div class="input-field">
+                                                    <label for="Nome">Força </label><br>
+                                                    <input type="number" class="nivel-forca" placeholder="LVL:"
+                                                        required>
+                                                </div>
 
-                                    <div class="fields">
-                                        <div class="input-field">
-                                            <label for="Nome">Força </label>
-                                            <input type="number" class="nivel-forca" placeholder="LVL:"
-                                                required>
+                                                <div class="input-field">
+                                                    <label for="Nome">Destreza </label><br>
+                                                    <input type="number" class="nivel-forca" placeholder="LVL:"
+                                                        required>
+                                                </div>
+
+                                                <div class="input-field">
+                                                    <label for="Nome">Constituição </label>
+                                                    <input type="number" class="nivel-forca" placeholder="LVL:"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-field">
+                                                    <label for="Nome">Inteligência </label><br>
+                                                    <input type="number" class="nivel-forca" placeholder="LVL:"
+                                                        required>
+                                                </div>
+
+                                                <div class="input-field">
+                                                    <label for="Nome">Sabedoria </label><br>
+                                                    <input type="number" class="nivel-forca" placeholder="LVL:"
+                                                        required>
+                                                </div>
+
+                                                <div class="input-field">
+                                                    <label for="Nome">Carisma </label><br>
+                                                    <input type="number" class="nivel-forca" placeholder="LVL:"
+                                                        required>
+                                                </div>
+                                            </div>
                                         </div>
-
-                                        <div class="input-field">
-                                            <label for="Nome">Destreza </label>
-                                            <input type="number" class="nivel-forca" placeholder="LVL:"
-                                                required>
-                                        </div>
-
-                                        <div class="input-field">
-                                            <label for="Nome">Constituição </label>
-                                            <input type="number" class="nivel-forca" placeholder="LVL:" required>
-                                        </div>
-
-                                        <div class="input-field">
-                                            <label for="Nome">Inteligência </label>
-                                            <input type="number" class="nivel-forca" placeholder="LVL:" required>
-                                        </div>
-
-                                        <div class="input-field">
-                                            <label for="Nome">Sabedoria </label>
-                                            <input type="number" class="nivel-forca" placeholder="LVL:"
-                                                required>
-                                        </div>
-
-                                        <div class="input-field">
-                                            <label for="Nome">Carisma </label>
-                                            <input type="number" class="nivel-forca" placeholder="LVL:"
-                                                required>
-                                        </div>
-
-                                        <button class="nextBtn" id="next1">
-                                            <span class="btnText" id="next1">Next</span>
-                                        </button>
                                     </div>
+                                    <button class="nextBtn" id="next1">
+                                        <span class="btnText" id="next1">Próximo</span>
+                                    </button>
                                 </div>
                             </div>
 
@@ -247,7 +254,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                         <span class="btnText" id="back1">Retorno</span>
                                     </div>
                                     <button class=".nextBtn-1">
-                                        <span class="btnText" id="next2">Next</span>
+                                        <span class="btnText" id="next2">Próximo</span>
                                     </button>
                                 </div>
 
@@ -306,7 +313,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <span class="btnText" id="back2">Retorno</span>
                                         </div>
                                         <button class=".nextBtn-1">
-                                            <span class="btnText" id="next3">Next</span>
+                                            <span class="btnText" id="next3">Próximo</span>
                                         </button>
                                     </div>
                                 </div>
@@ -326,7 +333,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                         <li class="cards__item">
                             <div class="card">
                                 <div class="card__content">
-                                    <div class="card_titulo_atributo">STRENGTH</div>
+                                    <div class="card_titulo_atributo">FORÇA</div>
                                     <p class="contabilizador_atributo">-1</p>
                                     <div class="card_valor_atributo">8</div>
                                 </div>
@@ -335,7 +342,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                         <li class="cards__item">
                             <div class="card">
                                 <div class="card__content">
-                                    <div class="card_titulo_atributo">DEXTERITY</div>
+                                    <div class="card_titulo_atributo">DEXTREZA</div>
                                     <p class="contabilizador_atributo">+2</p>
                                     <div class="card_valor_atributo">14</div>
                                 </div>
@@ -344,7 +351,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                         <li class="cards__item">
                             <div class="card">
                                 <div class="card__content">
-                                    <div class="card_titulo_atributo">CONSTITUTION</div>
+                                    <div class="card_titulo_atributo">CONSTITUIÇÃO</div>
                                     <p class="contabilizador_atributo">+1</p>
                                     <div class="card_valor_atributo">13</div>
                                 </div>
@@ -353,7 +360,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                         <li class="cards__item">
                             <div class="card">
                                 <div class="card__content">
-                                    <div class="card_titulo_atributo">INTELLIGENCE</div>
+                                    <div class="card_titulo_atributo">INTELIGÊNCIA</div>
                                     <p class="contabilizador_atributo">+3</p>
                                     <div class="card_valor_atributo">16</div>
                                 </div>
@@ -362,7 +369,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                         <li class="cards__item">
                             <div class="card">
                                 <div class="card__content">
-                                    <div class="card_titulo_atributo">WISDOM</div>
+                                    <div class="card_titulo_atributo">SABEDORIA</div>
                                     <p class="contabilizador_atributo">+1</p>
                                     <div class="card_valor_atributo">12</div>
                                 </div>
@@ -371,7 +378,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                         <li class="cards__item">
                             <div class="card">
                                 <div class="card__content">
-                                    <div class="card_titulo_atributo">CHARISMA</div>
+                                    <div class="card_titulo_atributo">CARISMA</div>
                                     <p class="contabilizador_atributo">+2</p>
                                     <div class="card_valor_atributo">14</div>
                                 </div>
@@ -387,7 +394,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                         <li class="cards__item">
                             <div class="card">
                                 <div class="card__content">
-                                    <div class="card_titulo_atributo">PROFICIENCY</div>
+                                    <div class="card_titulo_atributo">PROFICIÊNCIA</div>
                                     <p class="contabilizador_atributo">+2</p>
                                     <div class="card_valor_atributo">BONUS</div>
                                 </div>
@@ -396,9 +403,9 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                         <li class="cards__item">
                             <div class="card">
                                 <div class="card__content">
-                                    <div class="card_titulo_atributo">WALKING</div>
+                                    <div class="card_titulo_atributo">ANDAR</div>
                                     <p class="contabilizador_atributo">30</p>
-                                    <div class="card_valor_atributo">SPEED</div>
+                                    <div class="card_valor_atributo">VELOCIDADE</div>
                                 </div>
                             </div>
                         </li>
@@ -413,7 +420,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="card_valor_atributo">INSPIRATION</div>
+                                    <div class="card_valor_atributo">INSPIRAÇÃO</div>
                                 </li>
                             </ul>
                         </li>
@@ -427,7 +434,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <div class="col card_titulo_atributo">DANO</div>
                                         </div>
                                         <div class="col-sm-2">
-                                            <div class="col card_titulo_atributo">CURRENT</div>
+                                            <div class="col card_titulo_atributo">ATUAL</div>
                                             <p class="col contabilizador_atributo">10</p>
                                         </div>
                                         <div class="col-sm-1 card_barra">
@@ -465,7 +472,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                 <div class="card__content">
                                     <table>
                                         <tr>
-                                            <td style="padding-top: 10px;">STR</td>
+                                            <td style="padding-top: 10px;">FOR</td>
                                             <td style="padding-top: 10px;">-1</td>
                                             <td style="padding-top: 10px;">INT</td>
                                             <td style="padding-top: 10px;">+5</td>
@@ -473,13 +480,13 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                         <tr>
                                             <td style="padding-top: 10px;">DEX</td>
                                             <td style="padding-top: 10px;">+2</td>
-                                            <td style="padding-top: 10px;">WIS</td>
+                                            <td style="padding-top: 10px;">SAB</td>
                                             <td style="padding-top: 10px;">+3</td>
                                         </tr>
                                         <tr>
                                             <td style="padding-top: 10px;">CON</td>
                                             <td style="padding-top: 10px;">+1</td>
-                                            <td style="padding-top: 10px;">CHA</td>
+                                            <td style="padding-top: 10px;">CAR</td>
                                             <td style="padding-top: 10px;">+2</td>
                                         </tr>
                                     </table>
@@ -495,22 +502,24 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                 <div class="card__content">
                                     <table>
                                         <tr>
-                                            <td style="padding-top: 10px; text-align: left;">13</td>
-                                            <td style="padding-top: 10px; text-align: end;">PASSIVE WIS (PERCEPTION)
+                                            <td style="padding-top: 10px; text-align: left;">PASSIVA SAB (PERCEPÇÃO)
+                                            </td>
+                                            <td style="padding-top: 10px; text-align: end;">13
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="padding-top: 10px; text-align: left;">13</td>
-                                            <td style="padding-top: 10px; text-align: end;">PASSIVE INT (INVESTIGATION)
+                                            <td style="padding-top: 10px; text-align: left;">PASSIVA INT (INVESTIGAÇÃO)
+                                            </td>
+                                            <td style="padding-top: 10px; text-align: end;">13
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="padding-top: 10px; text-align: left;">13</td>
-                                            <td style="padding-top: 10px; text-align: end;">PASSIVE WIS (INSIGHT)</td>
+                                            <td style="padding-top: 10px; text-align: left;">PASSIVA SAB (COMPREENSÃO)</td>
+                                            <td style="padding-top: 10px; text-align: end;">13</td>
                                         </tr>
                                     </table>
                                     <p style="padding-top: 10px; margin-bottom: -5px;" class="card_valor_atributo">
-                                        SENSES
+                                        SENTIDOS
                                     </p>
                                 </div>
                             </div>
@@ -522,39 +531,39 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                     <table>
                                         <tr>
                                             <td style="font-size: 12px; padding-top: 15px; text-align: start; font-weight: normal;"
-                                                class="card_titulo_atributo">ARMOR</td>
+                                                class="card_titulo_atributo">ARMADURA</td>
                                         </tr>
                                         <tr>
                                             <td style="margin-bottom: -1px; margin-top: -7px; text-align: start; font-weight: normal;"
-                                                class="card_valor_atributo">None</td>
+                                                class="card_valor_atributo">Nenhuma</td>
                                         </tr>
                                         <tr>
                                             <td style="font-size: 12px; padding-top: 15px; text-align: start; font-weight: normal;"
-                                                class="card_titulo_atributo">WEAPONS</td>
+                                                class="card_titulo_atributo">ARMAS</td>
                                         </tr>
                                         <tr>
                                             <td style="margin-bottom: -1px; margin-top: -7px; text-align: start; font-weight: normal;"
-                                                class="card_valor_atributo">Crossbow, Light, Dagger, Dart, Quarterstaff,
+                                                class="card_valor_atributo">Besta, Isqueiro, Adaga, Dardos, Cajado,
                                                 Sling</td>
                                         </tr>
                                         <tr>
                                             <td style="font-size: 12px; padding-top: 15px; text-align: start; font-weight: normal;"
-                                                class="card_titulo_atributo">TOOLS</td>
+                                                class="card_titulo_atributo">FERRAMENTAS</td>
                                         </tr>
                                         <tr>
                                             <td style="margin-bottom: -1px; margin-top: -7px; text-align: start; font-weight: normal;"
-                                                class="card_valor_atributo">Vehicles(Land)</td>
+                                                class="card_valor_atributo">Veículos (Terrestres)</td>
                                         </tr>
                                         <tr>
                                             <td style="font-size: 12px; padding-top: 15px; text-align: start; font-weight: normal;"
-                                                class="card_titulo_atributo">LANGUAGES</td>
+                                                class="card_titulo_atributo">IDIOMAS</td>
                                         </tr>
                                         <tr>
                                             <td style="margin-bottom: -1px; margin-top: -7px; text-align: start; font-weight: normal;"
-                                                class="card_valor_atributo">Common, Elvish, Goblin, Halfling</td>
+                                                class="card_valor_atributo">Comum, Élfico, Goblin, Halfling</td>
                                         </tr>
                                     </table>
-                                    <p style="padding-top: 205px;" class="card_valor_atributo">PROFICIENCIES & LANGUAGES
+                                    <p style="padding-top: 205px;" class="card_valor_atributo">PROFICIÊNCIAS & IDIOMAS
                                     </p>
                                 </div>
                             </div>
@@ -584,7 +593,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>DEX
                                                 <hr>
                                             </td>
-                                            <td>Acrobatics
+                                            <td>Acrobacías
                                                 <hr>
                                             </td>
                                             <td>+2
@@ -595,7 +604,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>WIS
                                                 <hr>
                                             </td>
-                                            <td>Animal Handling
+                                            <td>Domesticação de Animais
                                                 <hr>
                                             </td>
                                             <td>+1
@@ -617,7 +626,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>STR
                                                 <hr>
                                             </td>
-                                            <td>Athletics
+                                            <td>Atleticismo
                                                 <hr>
                                             </td>
                                             <td>-1
@@ -628,7 +637,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>CHA
                                                 <hr>
                                             </td>
-                                            <td>Deception
+                                            <td>Fraude
                                                 <hr>
                                             </td>
                                             <td>+2
@@ -639,7 +648,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>INT
                                                 <hr>
                                             </td>
-                                            <td>History
+                                            <td>História
                                                 <hr>
                                             </td>
                                             <td>+5
@@ -650,7 +659,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>WIS
                                                 <hr>
                                             </td>
-                                            <td>Insight
+                                            <td>Compreensão
                                                 <hr>
                                             </td>
                                             <td>+3
@@ -661,7 +670,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>CHA
                                                 <hr>
                                             </td>
-                                            <td>Intimidation
+                                            <td>Intimidação
                                                 <hr>
                                             </td>
                                             <td>+2
@@ -672,7 +681,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>INT
                                                 <hr>
                                             </td>
-                                            <td>Investigation
+                                            <td>Investigação
                                                 <hr>
                                             </td>
                                             <td>+3
@@ -683,7 +692,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>WIS
                                                 <hr>
                                             </td>
-                                            <td>Medicine
+                                            <td>Medicina
                                                 <hr>
                                             </td>
                                             <td>+1
@@ -694,7 +703,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>INT
                                                 <hr>
                                             </td>
-                                            <td>Nature
+                                            <td>Natureza
                                                 <hr>
                                             </td>
                                             <td>+3
@@ -705,7 +714,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>WIS
                                                 <hr>
                                             </td>
-                                            <td>Perception
+                                            <td>Percepção
                                                 <hr>
                                             </td>
                                             <td>+3
@@ -727,7 +736,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>CHA
                                                 <hr>
                                             </td>
-                                            <td>Persuasion
+                                            <td>Persuasão
                                                 <hr>
                                             </td>
                                             <td>+4
@@ -738,7 +747,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>INT
                                                 <hr>
                                             </td>
-                                            <td>Religion
+                                            <td>Religião
                                                 <hr>
                                             </td>
                                             <td>+3
@@ -749,7 +758,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>DEX
                                                 <hr>
                                             </td>
-                                            <td>Sleight of Hand
+                                            <td>Artimanha
                                                 <hr>
                                             </td>
                                             <td>+4
@@ -760,7 +769,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>DEX
                                                 <hr>
                                             </td>
-                                            <td>Stealth
+                                            <td>Furtividade
                                                 <hr>
                                             </td>
                                             <td>+2
@@ -769,13 +778,13 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                         </tr>
                                         <tr>
                                             <td>WIS</td>
-                                            <td>Survival</td>
+                                            <td>Sobrevivência</td>
                                             <td>+1</td>
                                         </tr>
                                     </table>
                                     <p style="font-size: 12px; padding-top: 15px;" class="card_titulo_atributo">
-                                        Additional
-                                        Skills</p>
+                                        Skills Adicionais
+                                        </p>
                                     <p style="margin-bottom: -1px; margin-top: -7px;" class="card_valor_atributo">SKILLS
                                     </p>
                                 </div>
@@ -792,7 +801,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                             <li class="cards__item">
                                 <ul style=" list-style-type: none; margin-left: -35px;">
                                     <li>
-                                        <div style=" margin-bottom: 10px;" class="card_valor_atributo">INITIATIVE</div>
+                                        <div style=" margin-bottom: 10px;" class="card_valor_atributo">INICIATIVA</div>
                                     </li>
                                     <li>
                                         <div style="height: 80px;" class="card">
@@ -807,31 +816,9 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                             <li class="cards__item">
                                 <div class="card">
                                     <div class="card__content">
-                                        <div class="card_titulo_atributo">ARMOR</div>
+                                        <div class="card_titulo_atributo">ARMADURA</div>
                                         <p style="padding-top: 5px;" class="contabilizador_atributo">30</p>
-                                        <div class="card_titulo_atributo">CLASS</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="cards__item">
-                                <div style="width: 475px;" class="card">
-                                    <div class="card__content">
-                                        <div class="row">
-                                            <div class="col-sm-5">
-                                                <div style="font-size: 15px; font-weight: bold;"
-                                                    class="col contabilizador_atributo">DEFENSES</div>
-                                                <p style="font-size: 10px;" class="col card_titulo_atributo">
-                                                    Resistances,
-                                                    Immunities, or Vulnerabilities</p>
-                                            </div>
-                                            <div style="margin-left: 35px;" class="col-sm-1 vl"></div>
-                                            <div style="margin-left: -35px;" class="col-sm-5">
-                                                <div style="font-size: 15px; font-weight: bold;"
-                                                    class="col contabilizador_atributo">CONDITIONS</div>
-                                                <p style="font-size: 10px;" class="col card_titulo_atributo">Add Active
-                                                    Conditions</p>
-                                            </div>
-                                        </div>
+                                        <div class="card_titulo_atributo">CLASSE</div>
                                     </div>
                                 </div>
                             </li>
