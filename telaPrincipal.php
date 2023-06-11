@@ -31,7 +31,7 @@ $resultado = personaList($id_usuario);
     <link rel="stylesheet" href="js/teste.js">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>tela principal</title>
+    <title>DOIDOS E DADOS</title>
 </head>
 
 <body>
@@ -88,7 +88,7 @@ $resultado = personaList($id_usuario);
                         <p style="margin-top: -22px; color: rgb(190, 68, 68);"></p>
                     </div>
                     <div class="lvlChar">
-                        <p>Nível:<?php echo $row['nivel_personagem']?></p>
+                        <p>Nível: <?php echo $row['nivel_personagem']?></p>
                     </div>
                 </div>
                 <?php     
@@ -126,43 +126,43 @@ $resultado = personaList($id_usuario);
                                                 </div>
 
                                                 <div class="input-field">
-                                                    <label for="Nome">Nome do Jogador: </label>
+                                                    <label for="Nome">Nome do Jogador:</label>
                                                     <input type="text" name="nomeJogador" placeholder="Digite o nome do jogador:"
                                                         required>
                                                 </div>
 
                                                 <div class="input-field">
-                                                    <label for="Nome">Classe de personagem: </label>
+                                                    <label for="Nome">Classe de personagem:</label>
                                                     <input type="text" name="classePersonagem" id="classe" placeholder="Classe do personagem:"
                                                         required>
                                                 </div>
 
                                                 <div class="input-field">
-                                                    <label for="Nome">Nivel </label>
+                                                    <label for="Nome">Nível:</label>
                                                     <input type="number" name="nivel"  id="nivel" placeholder="Digite seu nivel:"
                                                         required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="input-field">
-                                                    <label for="Nome">Raça de personagem: </label>
+                                                    <label for="Nome">Raça de personagem:</label>
                                                     <input type="text" name="racaPersonagem"  placeholder="Raça do personagem:" required>
                                                 </div>
 
                                                 <div class="input-field">
                                                     <label for="Nome">Antecedentes:</label>
-                                                    <input type="text" name="antecedentePersonagem" placeholder=" Antecedente do personagem:"
+                                                    <input type="text" name="antecedentePersonagem" placeholder="Antecedente do personagem:"
                                                         required>
                                                 </div>
 
                                                 <div class="input-field">
-                                                    <label for="Nome">Alinhamento </label>
+                                                    <label for="Nome">Alinhamento:</label>
                                                     <input type="text" name="alinhamentoPersonagem" placeholder="Alinhamento do personagem:"
                                                         required>
                                                 </div>
                                                 <div class="input-field">
-                                                    <label for="Nome">Bonus de Proficiencias: </label>
-                                                    <input type="number" name="bonusProciencia" placeholder="Alinhamento do personagem:"
+                                                    <label for="Nome">Bônus de Proficiências:</label>
+                                                    <input type="number" name="bonusProciencia" placeholder="Bônus de proficiências:"
                                                         required>
                                                 </div>
                                             </div>
@@ -171,45 +171,39 @@ $resultado = personaList($id_usuario);
                                 </div>
                                 <!-- Atributos Input -->
                                 <div class="detalhe ID">
-                                    <span class="titulo">Atributos do Personagem</span>
+                                    <span class="titulo">Atributos do Personagem:</span>
                                     <div class="fieldsInput">
                                         <div style="padding-left: 50px;" class="row">
                                             <div style="padding-right: 100px;" class="col-md-6">
                                                 <div class="input-field">
-                                                    <label for="Nome">Força </label><br>
-                                                    <input type="number" name="atributoForca"  class="nivel-forca" placeholder="LVL:"
-                                                        required>
+                                                    <label for="Nome">Força:</label><br>
+                                                    <input type="number" name="atributoForca"  class="nivel-forca" required>
                                                 </div>
 
                                                 <div class="input-field">
-                                                    <label for="Nome">Destreza </label><br>
-                                                    <input type="number" name="atributoDestreza" class="nivel-forca" placeholder="LVL:"
-                                                        required>
+                                                    <label for="Nome">Destreza:</label><br>
+                                                    <input type="number" name="atributoDestreza" class="nivel-forca" required>
                                                 </div>
 
                                                 <div class="input-field">
-                                                    <label for="Nome">Constituição </label>
-                                                    <input type="number" name="atributoConstituicao" class="nivel-forca" placeholder="LVL:"
-                                                        required>
+                                                    <label for="Nome">Constituição:</label>
+                                                    <input type="number" name="atributoConstituicao" class="nivel-forca" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="input-field">
-                                                    <label for="Nome">Inteligência </label><br>
-                                                    <input type="number" name="atributoInteligencia" class="nivel-forca" placeholder="LVL:"
-                                                        required>
+                                                    <label for="Nome">Inteligência:</label><br>
+                                                    <input type="number" name="atributoInteligencia" class="nivel-forca" required>
                                                 </div>
 
                                                 <div class="input-field">
-                                                    <label for="Nome">Sabedoria </label><br>
-                                                    <input type="number" name="atributoSabedoria" class="nivel-forca" placeholder="LVL:"
-                                                        required>
+                                                    <label for="Nome">Sabedoria:</label><br>
+                                                    <input type="number" name="atributoSabedoria" class="nivel-forca" required>
                                                 </div>
 
                                                 <div class="input-field">
-                                                    <label for="Nome">Carisma </label><br>
-                                                    <input type="number" name="atributoCarisma" class="nivel-forca" placeholder="LVL:"
-                                                        required>
+                                                    <label for="Nome">Carisma:</label><br>
+                                                    <input type="number" name="atributoCarisma" class="nivel-forca" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -256,36 +250,38 @@ $resultado = personaList($id_usuario);
                                                         required> Atletismo</li>
                                                 <li><input type="number" class="salvaguarda" name="periciaAtuacao" placeholder="Atuação"
                                                         required> Atuação </li>
-                                                <li><input type="number" class="salvaguarda" name="periciaBlefar" placeholder="Enganação"
-                                                        required> Enganação </li>
+                                                <li><input type="number" class="salvaguarda" name="periciaBlefar" placeholder="Blefar"
+                                                        required> Blefar </li>
                                                 <li><input type="number" class="salvaguarda" name="periciaFurtividade" placeholder="Furtividade"
                                                         required> Furtividade</li>
-                                                <li><input type="number" class="salvaguarda" name="periciaHistoria" placeholder="Historia"
-                                                        required> Historia </li>
-                                                <li><input type="number" class="salvaguarda" name="periciaIntimidacao" placeholder="intimidação"
+                                                <li><input type="number" class="salvaguarda" name="periciaHistoria" placeholder="História"
+                                                        required> História </li>
+                                                <li><input type="number" class="salvaguarda" name="periciaIntimidacao" placeholder="Intimidação"
                                                         required> Intimidação </li>
+                                                <li><input type="number" class="salvaguarda" name="periciaIntuicao" placeholder="Intuição"
+                                                        required> Intuição </li>
                                             </ul>
                                         </div>
                                         <div class="input-field-salva">
                                             <ul class="lista-salva">
-                                                <li><input type="number" class="salvaguarda" name="periciaIntuicao" placeholder="intuição"
-                                                        required> intuição </li>
-                                                <li><input type="number" class="salvaguarda" name="periciaInvestigacao" placeholder="investigação"
-                                                        required> investigação </li>
+                                                <li><input type="number" class="salvaguarda" name="periciaInvestigacao" placeholder="Investigação"
+                                                        required> Investigação </li>
                                                 <li><input type="number" class="salvaguarda" name="periciaLidarAnimais" placeholder="Lidar com animais"
                                                         required> Lidar com animais </li>
                                                 <li><input type="number" class="salvaguarda" name="periciaMedicina" placeholder="Medicina"
                                                         required> Medicina</li>
                                                 <li><input type="number" class="salvaguarda" name="periciaNatureza" placeholder="Natureza"
                                                         required> Natureza </li>
-                                                <li><input type="number" class="salvaguarda" name="periciaPersuasao" placeholder="Percepção"
+                                                <li><input type="number" class="salvaguarda" name="periciaPercepcao" placeholder="Percepção"
                                                         required> Percepção </li>
-                                                <li><input type="number" class="salvaguarda" name="periciaPrestidigitacao" placeholder="Prestigitação"
-                                                        required> Prestigitação </li>
+                                                <li><input type="number" class="salvaguarda" name="periciaPersuasao" placeholder="Persuasão"
+                                                        required> Persuasão </li>
+                                                <li><input type="number" class="salvaguarda" name="periciaPrestidigitacao" placeholder="Prestidigitação"
+                                                        required> Prestidigitação </li>
                                                 <li><input type="number" class="salvaguarda" name="periciaReligiao" placeholder="Religião"
                                                         required> Religião </li>
-                                                <li><input type="number" class="salvaguarda" name="periciaSobrevivencia" placeholder="Sobrevivencia"
-                                                        required> Sobrevivencia </li>
+                                                <li><input type="number" class="salvaguarda" name="periciaSobrevivencia" placeholder="Sobrevivência"
+                                                        required> Sobrevivência </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -319,12 +315,6 @@ $resultado = personaList($id_usuario);
                                         </div>
 
                                         <div class="input-field">
-                                            <label for="Nome">Percepção Passiva: </label>
-                                            <input type="number" name="percepcaoPassiva" class="mod-combate"
-                                                placeholder="Digite o valor de percepção passiva:" required>
-                                        </div>
-
-                                        <div class="input-field">
                                             <label for="Nome">Deslocamento: </label>
                                             <input type="number" name="deslocamento" id="classe" class="mod-combate"
                                                 placeholder="Deslocamento:" required>
@@ -337,22 +327,22 @@ $resultado = personaList($id_usuario);
                                     </div>
                                 </div>
                                 <div class="detalhe pessoal">
-                                    <span class="titulo"> Proficiencias e linguagens: </span>
+                                    <span class="titulo"> Proficiências e linguagens: </span>
                                     <div class="fields">
                                         <div class="input-field">
-                                            <label for="Nome">Pericias em armaduras: </label>
+                                            <label for="Nome">Perícias em armaduras: </label>
                                             <input type="text" id="classe" name="armor" class="mod-area"
-                                                placeholder="Pericias em armaduras:">
+                                                placeholder="Perícias em armaduras:">
                                         </div>
                                         <div class="input-field">
-                                            <label for="Nome">Pericias em armas: </label>
+                                            <label for="Nome">Perícias em armas: </label>
                                             <input type="text" id="classe" name="armas" class="mod-area"
-                                                placeholder="Pericias em armas:">
+                                                placeholder="Perícias em armas:">
                                         </div>
                                         <div class="input-field">
-                                            <label for="Nome">Pericias em Ferramentas: </label>
+                                            <label for="Nome">Perícias em Ferramentas: </label>
                                             <input type="text" id="classe" name="ferramentas" class="mod-area"
-                                                placeholder="Pericias em Ferramentas:">
+                                                placeholder="Perícias em Ferramentas:">
                                         </div>
                                         <div class="input-field">
                                             <label for="Nome">Linguagens: </label>
@@ -456,16 +446,16 @@ $resultado = personaList($id_usuario);
                                 <div class="card__content">
                                     <div class="card_titulo_atributo">PROFICIÊNCIA</div>
                                     <p class="contabilizador_atributo"><?php echo $row['bonus_profici']?></p>
-                                    <div class="card_valor_atributo">BONUS</div>
+                                    <div class="card_valor_atributo"></div>
                                 </div>
                             </div>
                         </li>
                         <li class="cards__item">
                             <div class="card">
                                 <div class="card__content">
-                                    <div class="card_titulo_atributo">ANDAR</div>
+                                    <div class="card_titulo_atributo">DESLOCAMENTO</div>
                                     <p class="contabilizador_atributo"><?php echo $row['deslocamento']?></p>
-                                    <div class="card_valor_atributo">VELOCIDADE</div>
+                                    <div class="card_valor_atributo"></div>
                                 </div>
                             </div>
                         </li>
@@ -510,7 +500,7 @@ $resultado = personaList($id_usuario);
                                     </div>
                                     <div class="row">
                                         <p style="font-size: 1rem; margin-top: -15px; margin-left: -10px;"
-                                            class="col contabilizador_atributo">HIT POINTS</p>
+                                            class="col contabilizador_atributo">PONTOS DE VIDA</p>
                                     </div>
                                 </div>
                             </div>
@@ -536,7 +526,7 @@ $resultado = personaList($id_usuario);
                                             <td style="padding-top: 10px;"><?php echo $row['tdr_inteligencia']?></td>
                                         </tr>
                                         <tr>
-                                            <td style="padding-top: 10px;">DEX</td>
+                                            <td style="padding-top: 10px;">DES</td>
                                             <td style="padding-top: 10px;"><?php echo $row['tdr_destreza']?></td>
                                             <td style="padding-top: 10px;">SAB</td>
                                             <td style="padding-top: 10px;"><?php echo $row['tdr_sabedoria']?></td>
@@ -549,8 +539,7 @@ $resultado = personaList($id_usuario);
                                         </tr>
                                     </table>
                                     <p style="padding-top: 15px; margin-bottom: -5px;" class="card_valor_atributo">
-                                        SAVING
-                                        THROWS</p>
+                                        SALVAGUARDAS</p>
                                 </div>
                             </div>
                         </li>
@@ -560,20 +549,20 @@ $resultado = personaList($id_usuario);
                                 <div class="card__content">
                                     <table>
                                         <tr>
-                                            <td style="padding-top: 10px; text-align: left;">PASSIVA SAB (PERCEPÇÃO)
+                                            <td style="padding-top: 10px; text-align: left;">PERCEPÇÃO PASSIVA (SAB)
                                             </td>
-                                            <td style="padding-top: 10px; text-align: end;"><?php echo $row['atr_sabedoria']?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding-top: 10px; text-align: left;">PASSIVA INT (INVESTIGAÇÃO)
-                                            </td>
-                                            <td style="padding-top: 10px; text-align: end;"><?php echo $row['atr_inteligencia']?>
+                                            <td style="padding-top: 10px; text-align: end;"><?php echo $row['percp_passiva']?>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="padding-top: 10px; text-align: left;">PASSIVA SAB (COMPREENSÃO)</td>
-                                            <td style="padding-top: 10px; text-align: end;"><?php echo $row['atr_sabedoria']?>
+                                            <td style="padding-top: 10px; text-align: left;">INVESTIGAÇÃO PASSIVA (INT)
+                                            </td>
+                                            <td style="padding-top: 10px; text-align: end;"><?php echo $row['inves_passiva']?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-top: 10px; text-align: left;">INTUIÇÃO PASSIVA (SAB)</td>
+                                            <td style="padding-top: 10px; text-align: end;"><?php echo $row['intui_passiva']?>
                                         </td>
                                         </tr>
                                     </table>
@@ -598,12 +587,12 @@ $resultado = personaList($id_usuario);
                                         </tr>
                                         <tr>
                                             <td style="font-size: 12px; padding-top: 15px; text-align: start; font-weight: normal;"
-                                                class="card_titulo_atributo">armas</td>
+                                                class="card_titulo_atributo">ARMAS</td>
                                         </tr>
                                         <tr>
                                             <td style="margin-bottom: -1px; margin-top: -7px; text-align: start; font-weight: normal;"
                                                 class="card_valor_atributo"><?php echo $row['armas']?>
-                                                Sling</td>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td style="font-size: 12px; padding-top: 15px; text-align: start; font-weight: normal;"
@@ -637,214 +626,106 @@ $resultado = personaList($id_usuario);
                                     <table>
                                         <!--header table-->
                                         <tr>
-                                            <td>MOD
-                                                <hr>
-                                            </td>
-                                            <td>SKILL
-                                                <hr>
-                                            </td>
-                                            <td>BONUS
-                                                <hr>
-                                            </td>
+                                            <td>MOD<hr></td>
+                                            <td>PERÍCIA<hr></td>
+                                            <td>BONUS<hr></td>
                                         </tr>
                                         <!--fim header table-->
                                         <tr>
-                                            <td>DEX
-                                                <hr>
-                                            </td>
-                                            <td>Acrobacías
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_acrobacia']?>
-                                                <hr>
-                                            </td>
+                                            <td>DES<hr></td>
+                                            <td>Acrobacia<hr></td>
+                                            <td><?php echo $row['per_acrobacia']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>WIS
-                                                <hr>
-                                            </td>
-                                            <td>Domesticação de Animais
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_lidar_animais']?>
-                                                <hr>
-                                            </td>
+                                            <td>INT<hr></td>
+                                            <td>Arcanismo<hr></td>
+                                            <td><?php echo $row['per_arcanismo']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>INT
-                                                <hr>
-                                            </td>
-                                            <td>Arcana
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_arcanismo']?>
-                                                <hr>
-                                            </td>
+                                            <td>FOR<hr></td>
+                                            <td>Atletismo<hr></td>
+                                            <td><?php echo $row['per_atletismo']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>STR
-                                                <hr>
-                                            </td>
-                                            <td>Atleticismo
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_atletismo']?>
-                                                <hr>
-                                            </td>
+                                            <td>CAR<hr></td>
+                                            <td>Atuação<hr></td>
+                                            <td><?php echo $row['per_atuacao']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>CHA
-                                                <hr>
-                                            </td>
-                                            <td>Fraude
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_blefar']?>
-                                                <hr>
-                                            </td>
+                                            <td>CAR<hr></td>
+                                            <td>Blefar<hr></td>
+                                            <td><?php echo $row['per_blefar']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>INT
-                                                <hr>
-                                            </td>
-                                            <td>História
-                                                <hr>
-                                            </td>
-                                            <td>
-                                                <hr>
-                                            </td>
+                                            <td>DES<hr></td>
+                                            <td>Furtividade<hr></td>
+                                            <td><?php echo $row['per_furtividade']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>WIS
-                                                <hr>
-                                            </td>
-                                            <td>Compreensão
-                                                <hr>
-                                            </td>
-                                            <td>
-                                                <hr>
-                                            </td>
+                                            <td>INT<hr></td>
+                                            <td>História<hr></td>
+                                            <td><?php echo $row['per_historia']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>CHA
-                                                <hr>
-                                            </td>
-                                            <td>Intimidação
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_intimidacao']?>
-                                                <hr>
-                                            </td>
+                                            <td>CAR<hr></td>
+                                            <td>Intimidação<hr></td>
+                                            <td><?php echo $row['per_intimidacao']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>INT
-                                                <hr>
-                                            </td>
-                                            <td>Investigação
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_investigacao']?>
-                                                <hr>
-                                            </td>
+                                            <td>SAB<hr></td>
+                                            <td>Intuição<hr></td>
+                                            <td><?php echo $row['per_intuicao']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>WIS
-                                                <hr>
-                                            </td>
-                                            <td>Medicina
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_medicina']?>
-                                                <hr>
-                                            </td>
+                                            <td>INT<hr></td>
+                                            <td>Investigação<hr></td>
+                                            <td><?php echo $row['per_investigacao']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>INT
-                                                <hr>
-                                            </td>
-                                            <td>Natureza
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_natureza']?>
-                                                <hr>
-                                            </td>
+                                            <td>INT<hr></td>
+                                            <td>Lidar com Animais<hr></td>
+                                            <td><?php echo $row['per_lidar_animais']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>WIS
-                                                <hr>
-                                            </td>
-                                            <td>Percepção
-                                                <hr>
-                                            </td>
-                                            <td>
-                                                <hr>
-                                            </td>
+                                            <td>SAB<hr></td>
+                                            <td>Medicina<hr></td>
+                                            <td><?php echo $row['per_medicina']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>CHA
-                                                <hr>
-                                            </td>
-                                            <td>Performance
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_atuacao']?>
-                                                <hr>
-                                            </td>
+                                            <td>INT<hr></td>
+                                            <td>Natureza<hr></td>
+                                            <td><?php echo $row['per_natureza']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>CHA
-                                                <hr>
-                                            </td>
-                                            <td>Persuasão
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_persuasao']?>
-                                                <hr>
-                                            </td>
+                                            <td>SAB<hr></td>
+                                            <td>Percepção<hr></td>
+                                            <td><?php echo $row['per_percepcao']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>INT
-                                                <hr>
-                                            </td>
-                                            <td>Religião
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_religiao']?>
-                                                <hr>
-                                            </td>
+                                            <td>CAR<hr></td>
+                                            <td>Persuasão<hr></td>
+                                            <td><?php echo $row['per_persuasao']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>DEX
-                                                <hr>
-                                            </td>
-                                            <td>Artimanha
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_prestidigitacao']?>
-                                                <hr>
-                                            </td>
+                                            <td>DES<hr></td>
+                                            <td>Prestidigitação<hr></td>
+                                            <td><?php echo $row['per_prestidigitacao']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>DEX
-                                                <hr>
-                                            </td>
-                                            <td>Furtividade
-                                                <hr>
-                                            </td>
-                                            <td><?php echo $row['per_furtividade']?>
-                                                <hr>
-                                            </td>
+                                            <td>INT<hr></td>
+                                            <td>Religião<hr></td>
+                                            <td><?php echo $row['per_religiao']?><hr></td>
                                         </tr>
                                         <tr>
-                                            <td>WIS</td>
-                                            <td>Sobrevivência</td>
-                                            <td><?php echo $row['per_sobrevivencia']?></td>
+                                            <td>SAB<hr></td>
+                                            <td>Sobrevivência<hr></td>
+                                            <td><?php echo $row['per_sobrevivencia']?><hr></td>
                                         </tr>
                                     </table>
                                     <p style="font-size: 12px; padding-top: 15px;" class="card_titulo_atributo">
-                                        Skills Adicionais
+                                        Perícias Adicionais
                                         </p>
-                                    <p style="margin-bottom: -1px; margin-top: -7px;" class="card_valor_atributo">SKILLS
+                                    <p style="margin-bottom: -1px; margin-top: -7px;" class="card_valor_atributo">PERÍCIAS
                                     </p>
                                 </div>
                             </div>
@@ -875,9 +756,9 @@ $resultado = personaList($id_usuario);
                             <li class="cards__item">
                                 <div class="card">
                                     <div class="card__content">
-                                        <div class="card_titulo_atributo">ARMADURA</div>
+                                        <div class="card_titulo_atributo">CLASSE DE</div>
                                         <p style="padding-top: 5px;" class="contabilizador_atributo"><?php echo $row['classe_armadura']?></p>
-                                        <div class="card_titulo_atributo">CLASSE</div>
+                                        <div class="card_titulo_atributo">ARMADURA</div>
                                     </div>
                                 </div>
                             </li>
