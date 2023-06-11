@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/resetcss.css" />
     <link rel="stylesheet" href="css/stylesheet1.css" />
-    <title>Document</title>
+    <title>DOIDOS E DADOS</title>
 </head>
 
 <body>
