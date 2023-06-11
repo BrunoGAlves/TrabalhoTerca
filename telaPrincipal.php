@@ -5,7 +5,11 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
     header("Location: index.php?erro=2");
 }
 
+include_once 'classes/conexao.php';
+include_once 'classes/selects.php';
 
+$id_usuario = $_SESSION["jogador"];
+$resultado = personaList($id_usuario);
 
 ?>
 
@@ -39,8 +43,17 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
             <a style="text-align: center;" class="logotype"><span>PERSONAGENS</span></a>
             <div class="overflow-container">
                 <ul class="menu-dropdown">
-                    <li><a href="#">Personagem 1</a><span class="icon"><i class="fa-solid fa-user"></i></span></li>
-                    <li><a href="#">Personagem 2</a><span class="icon"><i class="fa-solid fa-user"></i></span></li>
+                    <?php
+                        while($row = mysqli_fetch_assoc($resultado)){
+
+                    ?>
+
+                    <li><a href="telaPrincipal.php?idPerson=<?php echo $row['cd_personagem'];?>">
+                    <?php echo $row['nome_personagem'];?></a><span class="icon"><i class="fa-solid fa-user"></i></span></li>
+
+                    <?php
+                        }
+                    ?>
                     <li style="position: absolute; bottom: 0px;">
                         <button class="buttonNewChar" id="formularioShow">Novo Personagem</button>
                     </li>
@@ -57,20 +70,34 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                     <p><i class="fa-solid fa-user"></i></p>
                 </div>
                 <div>
+
+                    <?php
+                    /* Apresentação inical dos itens dentro do header */
+                        if(!empty($_GET['idPerson'])){
+                            $idPersonagem = $_GET['idPerson'];
+                            $persona = personaSelect($idPersonagem);
+                            while($row = mysqli_fetch_assoc($persona)){
+                            
+                        ?> 
                     <div class="nomePersonagem">
-                        <p class="nomePersonagem">Nome do personagem</p>
+                        <p class="nomePersonagem:"><?php echo $row['nome_personagem']?></p>
                     </div>
                     <div class="CharInfo">
-                        <p>Raça</p>
-                        <p>Classe</p>
-                        <p style="margin-top: -22px; color: rgb(190, 68, 68);">Lvl</p>
+                        <p><?php echo $row['raca_personagem']?></p>
+                        <p> <?php echo $row['classe_personagem']?></p>
+                        <p style="margin-top: -22px; color: rgb(190, 68, 68);"></p>
                     </div>
                     <div class="lvlChar">
-                        <p>Nível Lvl</p>
+                        <p>Nível:<?php echo $row['nivel_personagem']?></p>
                     </div>
-
                 </div>
+                <?php     
+                    }
+                    }
+                ?>
+                  
             </div>
+
             <a class="logOutButton" href="classes/_logoff.php">
                 <p>Log out </p>
                 <i style="padding-left: 10px;" class="fa-solid fa-right-from-bracket"></i>
@@ -351,6 +378,13 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
             </main>
         </div>
         <!--FIM DO FORMULARIO-->
+        <?php
+            if(!empty($_GET['idPerson'])){
+                $idPersonagem = $_GET['idPerson'];
+                $persona = personaSelect($idPersonagem);
+                while($row = mysqli_fetch_assoc($persona)){   
+
+        ?> 
         <div class="row">
             <!-- Main stats -->
             <div style="margin-top: 80px;" class="col-md-6 atributos">
@@ -358,10 +392,10 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                     <ul class="cards">
                         <li class="cards__item">
                             <div class="card">
-                                <div class="card__content">
+                                <div class="card__content">   
                                     <div class="card_titulo_atributo">FORÇA</div>
-                                    <p class="contabilizador_atributo">-1</p>
-                                    <div class="card_valor_atributo">8</div>
+                                    <p class="contabilizador_atributo" id="mod_forca"></p>
+                                    <div class="card_valor_atributo" id="forca" ><?php echo $row['atr_forca']?></div>
                                 </div>
                             </div>
                         </li>
@@ -369,8 +403,8 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                             <div class="card">
                                 <div class="card__content">
                                     <div class="card_titulo_atributo">DEXTREZA</div>
-                                    <p class="contabilizador_atributo">+2</p>
-                                    <div class="card_valor_atributo">14</div>
+                                    <p class="contabilizador_atributo"></p>
+                                    <div class="card_valor_atributo"><?php echo $row['atr_destreza']?></div>
                                 </div>
                             </div>
                         </li>
@@ -378,8 +412,8 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                             <div class="card">
                                 <div class="card__content">
                                     <div class="card_titulo_atributo">CONSTITUIÇÃO</div>
-                                    <p class="contabilizador_atributo">+1</p>
-                                    <div class="card_valor_atributo">13</div>
+                                    <p class="contabilizador_atributo"></p>
+                                    <div class="card_valor_atributo"><?php echo $row['atr_constituicao']?></div>
                                 </div>
                             </div>
                         </li>
@@ -387,8 +421,8 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                             <div class="card">
                                 <div class="card__content">
                                     <div class="card_titulo_atributo">INTELIGÊNCIA</div>
-                                    <p class="contabilizador_atributo">+3</p>
-                                    <div class="card_valor_atributo">16</div>
+                                    <p class="contabilizador_atributo"></p>
+                                    <div class="card_valor_atributo"><?php echo $row['atr_inteligencia']?></div>
                                 </div>
                             </div>
                         </li>
@@ -396,8 +430,8 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                             <div class="card">
                                 <div class="card__content">
                                     <div class="card_titulo_atributo">SABEDORIA</div>
-                                    <p class="contabilizador_atributo">+1</p>
-                                    <div class="card_valor_atributo">12</div>
+                                    <p class="contabilizador_atributo"></p>
+                                    <div class="card_valor_atributo"><?php echo $row['atr_sabedoria']?></div>
                                 </div>
                             </div>
                         </li>
@@ -405,8 +439,8 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                             <div class="card">
                                 <div class="card__content">
                                     <div class="card_titulo_atributo">CARISMA</div>
-                                    <p class="contabilizador_atributo">+2</p>
-                                    <div class="card_valor_atributo">14</div>
+                                    <p class="contabilizador_atributo"></p>
+                                    <div class="card_valor_atributo"><?php echo $row['atr_carisma']?></div>
                                 </div>
                             </div>
                         </li>
@@ -421,7 +455,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                             <div class="card">
                                 <div class="card__content">
                                     <div class="card_titulo_atributo">PROFICIÊNCIA</div>
-                                    <p class="contabilizador_atributo">+2</p>
+                                    <p class="contabilizador_atributo"><?php echo $row['bonus_profici']?></p>
                                     <div class="card_valor_atributo">BONUS</div>
                                 </div>
                             </div>
@@ -430,7 +464,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                             <div class="card">
                                 <div class="card__content">
                                     <div class="card_titulo_atributo">ANDAR</div>
-                                    <p class="contabilizador_atributo">30</p>
+                                    <p class="contabilizador_atributo"><?php echo $row['deslocamento']?></p>
                                     <div class="card_valor_atributo">VELOCIDADE</div>
                                 </div>
                             </div>
@@ -455,29 +489,27 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                 <div class="card__content">
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <div class="col card_titulo_atributo">CURA</div>
-                                            <p class="col contabilizador_atributo">+2</p>
-                                            <div class="col card_titulo_atributo">DANO</div>
+                                           
                                         </div>
                                         <div class="col-sm-2">
                                             <div class="col card_titulo_atributo">ATUAL</div>
-                                            <p class="col contabilizador_atributo">10</p>
+                                            <p class="col contabilizador_atributo"><?php echo $row['vida_atual']?></p>
                                         </div>
                                         <div class="col-sm-1 card_barra">
                                             /
                                         </div>
                                         <div class="col-sm-2">
                                             <div class="col card_titulo_atributo">MAX</div>
-                                            <p class="col contabilizador_atributo">10</p>
+                                            <p class="col contabilizador_atributo"><?php echo $row['vida_maxima']?></p>
                                         </div>
                                         <div class="col-sm-3">
                                             <div style="font-size: 1rem; font-weight: bold;"
                                                 class="col contabilizador_atributo">TEMP</div>
-                                            <p style="font-size: 1rem;" class="col card_titulo_atributo">--</p>
+                                            <p style="font-size: 1rem;" class="col card_titulo_atributo"><?php echo $row['vida_temporaria']?></p>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <p style="font-size: 1rem; margin-top: -20px; margin-left: -10px;"
+                                        <p style="font-size: 1rem; margin-top: -15px; margin-left: -10px;"
                                             class="col contabilizador_atributo">HIT POINTS</p>
                                     </div>
                                 </div>
@@ -499,21 +531,21 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                     <table>
                                         <tr>
                                             <td style="padding-top: 10px;">FOR</td>
-                                            <td style="padding-top: 10px;">-1</td>
+                                            <td style="padding-top: 10px;"><?php echo $row['tdr_forca']?></td>
                                             <td style="padding-top: 10px;">INT</td>
-                                            <td style="padding-top: 10px;">+5</td>
+                                            <td style="padding-top: 10px;"><?php echo $row['tdr_inteligencia']?></td>
                                         </tr>
                                         <tr>
                                             <td style="padding-top: 10px;">DEX</td>
-                                            <td style="padding-top: 10px;">+2</td>
+                                            <td style="padding-top: 10px;"><?php echo $row['tdr_destreza']?></td>
                                             <td style="padding-top: 10px;">SAB</td>
-                                            <td style="padding-top: 10px;">+3</td>
+                                            <td style="padding-top: 10px;"><?php echo $row['tdr_sabedoria']?></td>
                                         </tr>
                                         <tr>
                                             <td style="padding-top: 10px;">CON</td>
-                                            <td style="padding-top: 10px;">+1</td>
+                                            <td style="padding-top: 10px;"><?php echo $row['tdr_constituicao']?></td>
                                             <td style="padding-top: 10px;">CAR</td>
-                                            <td style="padding-top: 10px;">+2</td>
+                                            <td style="padding-top: 10px;"><?php echo $row['tdr_carisma']?></td>
                                         </tr>
                                     </table>
                                     <p style="padding-top: 15px; margin-bottom: -5px;" class="card_valor_atributo">
@@ -530,18 +562,19 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                         <tr>
                                             <td style="padding-top: 10px; text-align: left;">PASSIVA SAB (PERCEPÇÃO)
                                             </td>
-                                            <td style="padding-top: 10px; text-align: end;">13
+                                            <td style="padding-top: 10px; text-align: end;"><?php echo $row['atr_sabedoria']?>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td style="padding-top: 10px; text-align: left;">PASSIVA INT (INVESTIGAÇÃO)
                                             </td>
-                                            <td style="padding-top: 10px; text-align: end;">13
+                                            <td style="padding-top: 10px; text-align: end;"><?php echo $row['atr_inteligencia']?>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td style="padding-top: 10px; text-align: left;">PASSIVA SAB (COMPREENSÃO)</td>
-                                            <td style="padding-top: 10px; text-align: end;">13</td>
+                                            <td style="padding-top: 10px; text-align: end;"><?php echo $row['atr_sabedoria']?>
+                                        </td>
                                         </tr>
                                     </table>
                                     <p style="padding-top: 10px; margin-bottom: -5px;" class="card_valor_atributo">
@@ -561,15 +594,15 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                         </tr>
                                         <tr>
                                             <td style="margin-bottom: -1px; margin-top: -7px; text-align: start; font-weight: normal;"
-                                                class="card_valor_atributo">Nenhuma</td>
+                                                class="card_valor_atributo"><?php echo $row['armor']?></td>
                                         </tr>
                                         <tr>
                                             <td style="font-size: 12px; padding-top: 15px; text-align: start; font-weight: normal;"
-                                                class="card_titulo_atributo">ARMAS</td>
+                                                class="card_titulo_atributo">armas</td>
                                         </tr>
                                         <tr>
                                             <td style="margin-bottom: -1px; margin-top: -7px; text-align: start; font-weight: normal;"
-                                                class="card_valor_atributo">Besta, Isqueiro, Adaga, Dardos, Cajado,
+                                                class="card_valor_atributo"><?php echo $row['armas']?>
                                                 Sling</td>
                                         </tr>
                                         <tr>
@@ -578,7 +611,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                         </tr>
                                         <tr>
                                             <td style="margin-bottom: -1px; margin-top: -7px; text-align: start; font-weight: normal;"
-                                                class="card_valor_atributo">Veículos (Terrestres)</td>
+                                                class="card_valor_atributo"><?php echo $row['ferramentas']?></td>
                                         </tr>
                                         <tr>
                                             <td style="font-size: 12px; padding-top: 15px; text-align: start; font-weight: normal;"
@@ -586,7 +619,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                         </tr>
                                         <tr>
                                             <td style="margin-bottom: -1px; margin-top: -7px; text-align: start; font-weight: normal;"
-                                                class="card_valor_atributo">Comum, Élfico, Goblin, Halfling</td>
+                                                class="card_valor_atributo"><?php echo $row['linguagens']?></td>
                                         </tr>
                                     </table>
                                     <p style="padding-top: 205px;" class="card_valor_atributo">PROFICIÊNCIAS & IDIOMAS
@@ -622,7 +655,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Acrobacías
                                                 <hr>
                                             </td>
-                                            <td>+2
+                                            <td><?php echo $row['per_acrobacia']?>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -633,7 +666,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Domesticação de Animais
                                                 <hr>
                                             </td>
-                                            <td>+1
+                                            <td><?php echo $row['per_lidar_animais']?>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -644,7 +677,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Arcana
                                                 <hr>
                                             </td>
-                                            <td>+5
+                                            <td><?php echo $row['per_arcanismo']?>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -655,7 +688,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Atleticismo
                                                 <hr>
                                             </td>
-                                            <td>-1
+                                            <td><?php echo $row['per_atletismo']?>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -666,7 +699,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Fraude
                                                 <hr>
                                             </td>
-                                            <td>+2
+                                            <td><?php echo $row['per_blefar']?>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -677,7 +710,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>História
                                                 <hr>
                                             </td>
-                                            <td>+5
+                                            <td>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -688,7 +721,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Compreensão
                                                 <hr>
                                             </td>
-                                            <td>+3
+                                            <td>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -699,7 +732,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Intimidação
                                                 <hr>
                                             </td>
-                                            <td>+2
+                                            <td><?php echo $row['per_intimidacao']?>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -710,7 +743,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Investigação
                                                 <hr>
                                             </td>
-                                            <td>+3
+                                            <td><?php echo $row['per_investigacao']?>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -721,7 +754,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Medicina
                                                 <hr>
                                             </td>
-                                            <td>+1
+                                            <td><?php echo $row['per_medicina']?>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -732,7 +765,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Natureza
                                                 <hr>
                                             </td>
-                                            <td>+3
+                                            <td><?php echo $row['per_natureza']?>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -743,7 +776,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Percepção
                                                 <hr>
                                             </td>
-                                            <td>+3
+                                            <td>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -754,7 +787,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Performance
                                                 <hr>
                                             </td>
-                                            <td>+2
+                                            <td><?php echo $row['per_atuacao']?>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -765,7 +798,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Persuasão
                                                 <hr>
                                             </td>
-                                            <td>+4
+                                            <td><?php echo $row['per_persuasao']?>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -776,7 +809,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Religião
                                                 <hr>
                                             </td>
-                                            <td>+3
+                                            <td><?php echo $row['per_religiao']?>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -787,7 +820,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Artimanha
                                                 <hr>
                                             </td>
-                                            <td>+4
+                                            <td><?php echo $row['per_prestidigitacao']?>
                                                 <hr>
                                             </td>
                                         </tr>
@@ -798,14 +831,14 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                             <td>Furtividade
                                                 <hr>
                                             </td>
-                                            <td>+2
+                                            <td><?php echo $row['per_furtividade']?>
                                                 <hr>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>WIS</td>
                                             <td>Sobrevivência</td>
-                                            <td>+1</td>
+                                            <td><?php echo $row['per_sobrevivencia']?></td>
                                         </tr>
                                     </table>
                                     <p style="font-size: 12px; padding-top: 15px;" class="card_titulo_atributo">
@@ -833,7 +866,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                         <div style="height: 80px;" class="card">
                                             <div class="card__content">
                                                 <p style="font-size: 2rem; margin-top: -3px;"
-                                                    class="contabilizador_atributo">+2</p>
+                                                    class="contabilizador_atributo"><?php echo $row['iniciativa']?></p>
                                             </div>
                                         </div>
                                     </li>
@@ -843,7 +876,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                                 <div class="card">
                                     <div class="card__content">
                                         <div class="card_titulo_atributo">ARMADURA</div>
-                                        <p style="padding-top: 5px;" class="contabilizador_atributo">30</p>
+                                        <p style="padding-top: 5px;" class="contabilizador_atributo"><?php echo $row['classe_armadura']?></p>
                                         <div class="card_titulo_atributo">CLASSE</div>
                                     </div>
                                 </div>
@@ -851,21 +884,13 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <li class="cards__item">
-                        <div style="width: 865px;" class="card">
-                            <div class="card__content">
-                                <div style="display: flex; justify-content: space-around; height: 730px;" class="row">
-                                    <p>história</p>
-                                    <p>magias</p>
-                                    <p>extras</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </div>
+               
             </div>
         </div>
+        <?php     
+                    }
+                    }
+                ?>
     </div>
     </div>
     <script src="js/arquivo.js"></script>

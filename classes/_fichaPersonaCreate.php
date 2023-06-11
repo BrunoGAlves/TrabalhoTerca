@@ -7,7 +7,7 @@ if (!isset($_SESSION["autenticacao"]) || !isset($_SESSION["jogador"])){ // codig
 
 include_once 'conexao.php';
 
-$codJogador = 4 /*$_SESSION["jogador"]*/;
+$codJogador = $_SESSION["jogador"];
 $nome_personagem = $_POST['nomePersonagem'];
 $nome_jogador = $_POST['nomeJogador'];
 $classe_personagem = $_POST['classePersonagem'];
