@@ -889,8 +889,8 @@ $resultado = personaList($id_usuario);
         </div>
         <?php     
                     }
-                    }
-                ?>
+                }
+            ?>
     </div>
     </div>
     <script src="js/arquivo.js"></script>
