@@ -36,7 +36,6 @@ $resultado = personaList($id_usuario);
 
 <body>
 
-
     <!------------------------------------------- Side Bar -------------------------->
     <div class="primary-nav">
         <nav role="navigation" class="menu">
@@ -49,7 +48,12 @@ $resultado = personaList($id_usuario);
                     ?>
 
                     <li><a href="telaPrincipal.php?idPerson=<?php echo $row['cd_personagem'];?>">
-                    <?php echo $row['nome_personagem'];?></a><span class="icon"><i class="fa-solid fa-user"></i></span></li>
+                    <?php echo $row['nome_personagem'];?></a>
+                    <span class="icon">
+                            <a style="margin-right: -10px;" href="" class="DeleteEditButton"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="" class="DeleteEditButton"><i class="fa-solid fa-x"></i></a>
+                            <i class="fa-solid fa-user"></i>
+                    </span></li>
 
                     <?php
                         }
