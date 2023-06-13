@@ -138,11 +138,23 @@ body {
 }
 
 .menu-dropdown li .icon {
-    color: #d1cfcf;
+    color: #b8b8b8;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 12px;
 }
 
 .menu-dropdown li:hover .icon {
-    color: #fff;
+    color: #d8d8d8;
+}
+
+.menu-dropdown li .DeleteEditButton {
+    color: rgba(0, 0, 0, 0.0);
+}
+
+.menu-dropdown li:hover .DeleteEditButton {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 
