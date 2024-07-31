@@ -1,4 +1,3 @@
-# TrabalhoTerca
-Trabalho de terça
+# FICHA DE D&D /PROJETO FACULDADE 
 
-Teste de envio de codigo
+
